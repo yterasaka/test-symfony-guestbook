@@ -1,0 +1,12 @@
+{
+    auto_https off
+    admin off
+}
+
+:{$PORT:8000} {
+    root * /app/public
+    encode gzip
+    
+    php_fastcgi localhost:9000
+    file_server
+}
